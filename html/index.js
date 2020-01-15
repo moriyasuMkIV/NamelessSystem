@@ -23,14 +23,26 @@ app.post('/', (req, res) => {
   });
 
   req.on('end', () => {
-      console.log(`[done] Image upload`);
-      req.rawBody = Buffer.concat(buffers);
-      //書き込み
-      fs.writeFile('/雨街.jpg', req.rawBody, 'utf-8',(err) => {
-          if(err) return;
-          console.log(`[done] Image save`);
-	  });
-  });
+		console.log(`[done] Image upload`);
+		req.rawBody = Buffer.concat(buffers);
+		//書き込み
+		fs.writeFile('/雨街.jpg', req.rawBody, 'utf-8',(err) => {
+			if(err) return;
+			console.log(`[done] Image save`);
+		});
+		fs.writeFile('/airplane.png', req.rawBody, 'utf-8',(err) => {
+			if(err) return;
+			console.log(`[done] Image save`);
+		});
+		fs.writeFile('/zoom_in.png', req.rawBody, 'utf-8',(err) => {
+			if(err) return;
+			console.log(`[done] Image save`);
+		});
+		fs.writeFile('/zoom_out.png', req.rawBody, 'utf-8',(err) => {
+			if(err) return;
+			console.log(`[done] Image save`);
+		});
+  	});
 });
 
 http.listen(PORT, function () {

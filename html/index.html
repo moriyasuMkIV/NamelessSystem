@@ -103,10 +103,6 @@
             transition: .5s;
         }
         
-        .gnav li li a {
-            /*border-top: 1px solid #eee;*/
-        }
-        
         .gnav li:hover > ul > li {
             height: 2rem;
             overflow: visible;
@@ -206,8 +202,8 @@
         }
         
         .tabs {
-            margin-top: 50px;
-            padding-bottom: 40px;
+            margin-top: 20px;
+            padding-bottom: 0px;
             background-color: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             /*width: 1500px;*/
@@ -245,7 +241,7 @@
             display: none;
             padding: 15px 15px 0;
             clear: both;
-            overflow: hidden;
+            overflow: auto;
             height: 100px;
         }
         /*選択されているタブのコンテンツのみを表示*/
@@ -288,26 +284,26 @@
         .cWrap{
             width:150px;
             height:150px;
-            margin:0 auto;
-            border:solid 3px #333;
+            margin-left: 0;
+            margin-top: 330px;
+            padding-left: 10px;
+            position: absolute;
+            /*left: 0;*/
+            top: 1000;
+            /*border:solid 3px #333;*/
         }
         .clBtn{
-            width:100px;
+            width:50px;
             height:35px;
-            background-color:#333;
-            color:#fff;
-            font-weight:bold;
-            margin:20px auto;
+            margin-left: 2px;
+            margin-bottom: 20px;
             line-height:2.2em;
             cursor:pointer;
         }
         .clBtn:hover{
             width:100px;
             height:35px;
-            background-color:#666;
-            color:#fff;
             font-weight:bold;
-            margin:20px auto;
             line-height:2.2em;
             cursor:pointer;
         }
@@ -332,6 +328,57 @@
 </head>
 
 <body>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-131821888-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+        
+            gtag('config', 'UA-131821888-1');
+        </script>
+        <script src="https://riversun.github.io/jsframe/jsframe.js"></script>
+        <script>
+            function start() {
+                const jsFrame = new JSFrame();
+                const frame = jsFrame.create({
+                    title: 'イニシアティブ表',
+                    left: 1200, top: 45, width: 320, height: 180,
+                    movable: true,//マウスで移動可能
+                    resizable: true,//マウスでリサイズ可能
+                    html: '<div id="my_element" style="padding:10px;font-size:12px;color:black;">イニシアティブ表　現在未完成形</div>'
+                });
+                //ウィンドウを表示する
+                frame.show();
+            }
+        
+            start();
+        </script>
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-131821888-1');
+        </script>
+        <script src="https://riversun.github.io/jsframe/jsframe.js"></script>
+        <script>
+            function start() {
+                const jsFrame = new JSFrame();
+                const frame = jsFrame.create({
+                    title: 'チャットパレット',
+                    left: 1200, top: 260, width: 320, height: 220,
+                    movable: true,//マウスで移動可能
+                    resizable: true,//マウスでリサイズ可能
+                    html: '<div id="my_element" style="padding:10px;font-size:12px;color:black;">チャパレだ　　現在未完成形</div>'
+                });
+                //ウィンドウを表示する
+                frame.show();
+            }
+
+            start();
+        </script>
+
     <div class="container">
         <ul class="gnav">
             <li>
@@ -428,9 +475,9 @@
         </div>
         <!-- マップのサイズ変更 -->
         <div class="cWrap">
-            <div id="ick25" class="clBtn">小さく</div>
-            <div id="ick50" class="clBtn">大きく</div>
-        </div>
+                <div id="ick25" class="clBtn"><img width="45px" src="./zoom_out.png" alt="縮小"></div>
+                <div id="ick50" class="clBtn"><img width="45px" src="./zoom_in.png" alt="拡大"></div>
+            </div>
     </div>
 
     <div class="chat">
@@ -446,9 +493,7 @@
 
             <div class="tab_content" id="all_content">
                 <div class="tab_content_description">
-                    <p class="c-txtsp">
-                        <ul class="overflow chatlogs" id="messages" style="overflow: auto;"></ul>
-                    </p>
+                    <ul class="overflow chatlogs" id="messages" style="overflow: scroll;"></ul>
                 </div>
             </div>
             <div class="tab_content" id="programming_content">
@@ -477,7 +522,7 @@
 
         </div>
         <div class="submit">
-            <button type="image" width="250px" height="70px" src="../images/airplane.png" alt="送信"></button>
+            <input type="image" width="150px" height="65px" src="/airplane.png" alt="送信">
         </div>
     </form>
 
