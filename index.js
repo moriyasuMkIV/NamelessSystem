@@ -6,10 +6,6 @@ const io = require('socket.io')(http);
 const PORT = process.env.PORT || 7000;
 app.use(express.static(__dirname));
 
-app.get('/', function (req, res) {
-	res.sendFile(__dirname + '/index.html');
-});
-
 //画像表示
 app.get('/', (req, res) => res.sendFile('/index.html'));
 //画像アップロードを受け付け
